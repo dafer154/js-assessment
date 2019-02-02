@@ -7,7 +7,7 @@ arraysAnswers = {
    * @returns {Number} The index of item in arr, or -1 if item is not in arr.
    */
   indexOf: function indexOf(arr, item) {
-    // Implement a function, that returns the 0 based index of an element in an array.
+    return arr.indexOf(item);
   },
 
   /**
@@ -17,7 +17,12 @@ arraysAnswers = {
    * @returns {Number} The numerical sum of all items in arr.
    */
   sum: function sum(arr) {
+    let suma = 0;
+    for (let i = 0; i < arr.length; i++ ){
+      suma += arr[i]; 
+    }
 
+    return suma;
   },
 
   /**
@@ -28,7 +33,8 @@ arraysAnswers = {
    * @returns {Number[]} A new array containing all numbers from arr except item.
    */
   remove: function remove(arr, item) {
-
+    const result = arr.filter(number => number != item);
+    return result;
   },
 
   /**
@@ -39,7 +45,9 @@ arraysAnswers = {
    * @returns {Number[]} The array arr, with item appended.
    */
   append: function append(arr, item) {
-
+    var newArray = arr.slice();
+    newArray.push(item);
+    return newArray;
   },
 
   /**
@@ -49,7 +57,10 @@ arraysAnswers = {
    * @returns {Number[]} The array arr, with the last element removed..
    */
   truncate: function truncate(arr) {
-
+    var newArray = arr.slice();
+    var p = arr.length-1;
+    newArray.splice(p, 1);
+    return newArray;
   },
 
   /**
@@ -60,6 +71,9 @@ arraysAnswers = {
    * @returns {Number[]} The array arr, with the first element item added
    */
   prepend: function prepend(arr, item) {
+    var newArray = arr.slice();
+    newArray.unshift(item);
+    return newArray;
 
   },
 
