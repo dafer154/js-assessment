@@ -16,20 +16,16 @@ recursionAnswers = {
    * 
    * @returns {Number[]} The files under the directory dirName, including subdiretories.
    */
-  listFiles: function listFiles(data, dirName) {
-
-  },
+  listFiles: function listFiles(data, dirName) {},
 
   /**
    * Determines the fibonacci number at position n.
    * https://en.wikipedia.org/wiki/Fibonacci_number
-   * 
+   *
    * The first few fibonacci numbers are: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
-   * 
+   *
    * @param {Number} n - the index of the fibonacci number desired
    * @returns {Number} The nth fibonacci number
    */
-  fibonacci: function fibonacci(n) {
-
-  },
+  fibonacci: function fibonacci(n) {}
 };
