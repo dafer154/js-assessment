@@ -23,41 +23,19 @@ asyncAnswers = {
    * @returns {then: function} A promise like object containing a then property.
    */
   manipulateRemoteData: function manipulateRemoteData(url) {
+    
     //Review
-    //http://127.0.0.1:4444/data/testdata.json
-    /*
-        fetch(url).then((response) => {
+
+    return new Promise((resolve, reject)=>{
+      fetch(url).then((response) => {
         return response.json();
       }).then((jsonData)=>{
-        jsonData.people.map((value)=>{
-          return console.log(value.name);
-        })
+        resolve(jsonData.people.map(item => item.name).sort());
+      }).catch((err)=>{
+        reject(err);
       })
-    */
-    /*
-   new Promise(resolve, reject){
+    })
 
-      return fetch(url).then((data) =>{
-        var names = [];
-        data.people.forEach(function(person) {
-          names.push(person.name);
-        });
-      }
-      resolve(names.sort());
-
-   }
-   */
-    /*
-   fetch(url).then((data) =>{
-     var names = [];
-     data.people.forEach(function(person) {
-       names.push(person.name);
-     });
-
-     promise.resolve(names.sort());
-   });
-
-   return promise;
-   */
+    
   }
 };
