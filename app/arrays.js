@@ -33,22 +33,23 @@ arraysAnswers = {
    * @returns {Number[]} A new array containing all numbers from arr except item.
    */
   remove: function remove(arr, item) {
-    //The ultimate test case, I think is bad make.
+    // The ultimate test case, I think is bad make.
 
+    /*
     var result = [];
     result = arr.filter(number => number != item);
 
     return result;
+    */
 
-    //Other solution
-    /*
-    var index = arr.indexOf(item)
-    while(index > -1){
-      arr.splice(index,1);
+    // Other solution
+
+    let index = arr.indexOf(item);
+    while (index > -1) {
+      arr.splice(index, 1);
       index = arr.indexOf(item);
     }
     return arr;
-    */
   },
 
   /**
@@ -129,14 +130,15 @@ arraysAnswers = {
    * @returns {Number} The count of the number of times the number item appeared in arr.
    */
   count: function count(arr, item) {
-    var count = 0;
+    
+    let countN = 0;
 
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] == item) {
-        count++;
+    for (let i = 0; i < arr.length; i += 1) {
+      if (arr[i] === item) {
+        countN += 1;
       }
     }
-    return count;
+    return countN;
   },
 
   /**
@@ -146,28 +148,15 @@ arraysAnswers = {
    * @returns {Number[]} An array of numbers that appear in arr more than once.
    */
   duplicates: function duplicates(arr) {
-    
-    
-    //ignore this code in this moment
-    
-    /*
-    var arraySor = arr.sor();
-    var newArray = [];
 
-    for (let i = 0; i < arraySor.length; i++) {
-      if (arraySor[i] == arraySor[i + 1]) {
-        result = arraySor.filter(number => number != arr[i]);
-        newArray.push(arraySor[i]);
+    var duplicates = [];
+
+    for (let i = 0; i < arr.length; i++) {
+      if (i !== arr.lastIndexOf(arr[i]) && duplicates.indexOf(arr[i]) === -1) {
+        duplicates.push(arr[i]);
       }
     }
-
-    var index = arr.indexOf(item);
-    while (index > -1) {
-      arr.splice(index, 1);
-      index = arr.indexOf(item);
-    }
-    return arr;
-    */
+    return duplicates;
   },
 
   /**
