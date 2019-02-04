@@ -18,7 +18,7 @@ arraysAnswers = {
    */
   sum: function sum(arr) {
     let suma = 0;
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i += 1) {
       suma += arr[i];
     }
 
@@ -33,16 +33,12 @@ arraysAnswers = {
    * @returns {Number[]} A new array containing all numbers from arr except item.
    */
   remove: function remove(arr, item) {
-    // The ultimate test case, I think is bad make.
-
+    // other solution
     /*
     var result = [];
     result = arr.filter(number => number != item);
-
     return result;
     */
-
-    // Other solution
 
     let index = arr.indexOf(item);
     while (index > -1) {
@@ -51,6 +47,16 @@ arraysAnswers = {
     }
     return arr;
   },
+
+  removeWithoutCopy: function removeWithoutCopy(arr, item) {
+    let index = arr.indexOf(item);
+    while (index > -1) {
+      arr.splice(index, 1);
+      index = arr.indexOf(item);
+    }
+    return arr;
+  },
+
 
   /**
    * Adds a number, item, to the end of an array, arr.
@@ -130,7 +136,6 @@ arraysAnswers = {
    * @returns {Number} The count of the number of times the number item appeared in arr.
    */
   count: function count(arr, item) {
-    
     let countN = 0;
 
     for (let i = 0; i < arr.length; i += 1) {
@@ -148,15 +153,13 @@ arraysAnswers = {
    * @returns {Number[]} An array of numbers that appear in arr more than once.
    */
   duplicates: function duplicates(arr) {
-
-    var duplicates = [];
-
-    for (let i = 0; i < arr.length; i++) {
-      if (i !== arr.lastIndexOf(arr[i]) && duplicates.indexOf(arr[i]) === -1) {
-        duplicates.push(arr[i]);
+    const duplicateNumbers = [];
+    for (let i = 0; i < arr.length; i += 1) {
+      if (i !== arr.lastIndexOf(arr[i]) && duplicateNumbers.indexOf(arr[i]) === -1) {
+        duplicateNumbers.push(arr[i]);
       }
     }
-    return duplicates;
+    return duplicateNumbers;
   },
 
   /**
@@ -166,8 +169,7 @@ arraysAnswers = {
    * @returns {Number[]} A new array of numbers that contains the elements of arr squared.
    */
   square: function square(arr) {
-    var sqrt = arr.map(value => value * value);
-    return sqrt;
+    return arr.map(value => value * value);
   },
 
   /**
@@ -178,12 +180,12 @@ arraysAnswers = {
    * @returns {Number[]} A new array of numbers which represent the indices of target in arr.
    */
   findAllOccurrences: function findAllOccurrences(arr, target) {
-    var occuranceArrayIndex = [];
-    for (var i = 0; i < arr.length; i++) {
+    const occuranceArrayIndex = [];
+    for (let i = 0; i < arr.length; i += 1) {
       if (arr[i] === target) {
         occuranceArrayIndex.push(i);
       }
     }
     return occuranceArrayIndex;
-  }
+  },
 };
