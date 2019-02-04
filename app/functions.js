@@ -11,7 +11,6 @@ functionsAnswers = {
    */
 
   argsAsArray: function argsAsArray(fn, arr) {
-    //Review this exercise
     return fn.apply(null, arr);
   },
 
@@ -30,7 +29,7 @@ functionsAnswers = {
    */
   functionFunction: function functionFunction(str) {
     return function(sum) {
-      return str + ", " + sum;
+      return str + ', ' + sum;
     };
-  }
+  },
 };
