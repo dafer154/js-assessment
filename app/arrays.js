@@ -48,6 +48,8 @@ arraysAnswers = {
     return arr;
   },
 
+  // This function is the same to the  function remove **David**
+
   removeWithoutCopy: function removeWithoutCopy(arr, item) {
     let index = arr.indexOf(item);
     while (index > -1) {
